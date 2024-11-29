@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "529139731944",
+    "project_id": "lista-de-tarefas-351f4",
+    "storage_bucket": "lista-de-tarefas-351f4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529139731944:android:57258506352da5b399a85d",
+        "android_client_info": {
+          "package_name": "com.gabriel.lista_de_tarefas_compose"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIgxYMXTGmPSDYs1OZdwksneRK2e1PHvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
