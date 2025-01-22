@@ -15,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.gabriel.lista_de_tarefas_compose.ui.theme.ListadetarefascomposeTheme
+import com.gabriel.lista_de_tarefas_compose.view.EditTask
 import com.gabriel.lista_de_tarefas_compose.view.ListTasks
 import com.gabriel.lista_de_tarefas_compose.view.SaveTasks
 
@@ -36,6 +37,10 @@ class MainActivity : ComponentActivity() {
                         route = "saveTasks"
                     ){
                         SaveTasks(navController)
+                    }
+                    composable(route = "editTask/{taskId}") { backStackEntry ->
+                        val taskId = backStackEntry.arguments?.getString("taskId")
+                        EditTask(navController, taskId)
                     }
                 }
             }

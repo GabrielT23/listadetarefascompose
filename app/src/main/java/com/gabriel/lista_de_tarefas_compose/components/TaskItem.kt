@@ -7,8 +7,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -89,7 +92,7 @@ fun TaskItem(
         ConstraintLayout(
             modifier = Modifier.padding(20.dp)
         ) {
-            val(txtTitle, txtDescription, cardPriority, txtPriority, btDelete) = createRefs()
+            val(txtTitle, txtDescription, cardPriority, txtPriority, btDelete, btEdit) = createRefs()
 
             Text(
                 taskTitle.toString(),
@@ -138,6 +141,15 @@ fun TaskItem(
                 },
             ) {
                 Image(imageVector = ImageVector.vectorResource(id = R.drawable.baseline_delete_24), contentDescription = null)
+            }
+            IconButton(onClick = { navController.navigate("editTask/${taskTitle}") },
+                modifier = Modifier.constrainAs(btEdit){
+                    top.linkTo(txtDescription.bottom, margin = 10.dp)
+                    start.linkTo(btDelete.end, margin = 30.dp)
+                    bottom.linkTo(parent.bottom, margin = 10.dp)
+                    end.linkTo(parent.end, margin = 10.dp)
+                },) {
+                Icon(Icons.Default.Edit, contentDescription = "Editar Tarefa")
             }
         }
     }
